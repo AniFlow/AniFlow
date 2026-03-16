@@ -715,22 +715,96 @@ body {
 /* ========================
    RESPONSIVE - SMALL (360px)
 ======================== */
-@media (max-width: 360px) {
-    .wiget-type-2 {
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
-        height: 260px;
-    }
-
-    .vid_item {
+        background: #131921;
         flex-direction: column;
-        height: auto;
-        padding: 15px;
-        align-items: flex-start;
+        display: none;
+        padding: 10px;
     }
 
-    .image > img {
-        height: 150px;
-        width: 110px;
-        margin-left: 0;
+    .logo {
+        font-size: 13px;
     }
-}
+
+    .slider {
+        margin-top: 0px;
+        width: 100%;
+        height: 20vh;
+    }
+
+    .nav-btn {
+        height: 30px;
+        width: 21px;
+        font-size: 16px;
+    }
+
+    .section-title {
+
+        display: none;
+
+    }
+
+    .section-title h2 {
+
+        display: none;
+
+
+    }
+
+    .footer-logo{
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+
+        font-size: 0.5rem;
+        gap: 5px;
+    }
+
+    .video_contain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    .cono-2 {
+        padding: 10px 15px 30px;
+        gap: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .search-box {
+        width: 220px;
+        height: 29px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+
+
+    .wiget-type-2 {
+        width: calc(50% - 8px);
+        height: 300px;
+    }
+
