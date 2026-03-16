@@ -6,34 +6,18 @@
 }
 
 body {
-   
-
- 
-
     background: #282537;
     background-image: radial-gradient(circle at top, #3c3b52 0%, #252233 80%);
     background-size: 200% 200%;
     animation: breathe 120s ease infinite;
 }
 
-
 @keyframes breathe {
-    25%   { background-position: 0% 25%; }
+    25%  { background-position: 0% 25%; }
     50%  { background-position: 25% 50%; }
-    75% { background-position: 50% 75%; }
+    75%  { background-position: 50% 75%; }
     100% { background-position: 75% 100%; }
-    75%  { background-position: 100% 75%; }
-    50% { background-position: 75% 50%; }
-    25%  { background-position: 50% 25%; }
-    0% { background-position: 25% 0%; }
 }
-
-
-
-
-    
-
-
 
 /* ========================
    NAVBAR
@@ -48,23 +32,22 @@ body {
     padding: 12px 30px;
     color: white;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.0);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 10px;
 }
 
 .logo {
-    font-family:cursive;
+    font-family: cursive;
     font-size: 26px;
     letter-spacing: 3px;
     color: #ee0979;
     text-shadow: 0 0 10px rgba(238, 9, 121, 0.5);
     text-decoration-style: wavy;
     text-decoration-line: underline;
- 
- 
-   
-
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .search-box {
@@ -72,15 +55,18 @@ body {
     background: white;
     border-radius: 25px;
     overflow: hidden;
+    flex: 1;
+    max-width: 250px;
 }
 
 .search-txt {
     border: none;
     outline: none;
     padding: 8px 15px;
-    width: 200px;
+    width: 100%;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 600;
+    min-width: 0;
 }
 
 .search-btn {
@@ -91,12 +77,14 @@ body {
     justify-content: center;
     cursor: pointer;
     color: white;
+    flex-shrink: 0;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
+    flex-shrink: 0;
 }
 
 .nav-links a {
@@ -115,6 +103,7 @@ body {
     font-size: 25px;
     cursor: pointer;
     color: white;
+    flex-shrink: 0;
 }
 
 /* ========================
@@ -126,20 +115,6 @@ body {
     position: relative;
     overflow: hidden;
     border-bottom: 3px solid rgba(171, 204, 247, 0.6);
-
-    .slider::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.4) 0%,      /* upar thoda dark */
-        transparent 50%,           /* beech transparent */
-        rgba(0,0,0,0.3) 100%      /* neeche zyada dark */
-    );
-    z-index: 2;
-    pointer-events: none;
-}
 }
 
 .slider {
@@ -162,6 +137,20 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.slider::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.4) 0%,
+        transparent 50%,
+        rgba(0,0,0,0.3) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
 }
 
 .nav-btn {
@@ -192,6 +181,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 5px;
+    z-index: 10;
 }
 
 .dot {
@@ -213,23 +203,21 @@ body {
 }
 
 .section-title h2 {
-    font-family: 'Orbitron', sans-serif;;
+    font-family: 'Orbitron', sans-serif;
     text-align: center;
     font-size: 1.5rem;
     color: white;
     letter-spacing: 3px;
     text-shadow: 0 0 10px rgba(238, 9, 121, 0.4);
-     background: #092756;
-    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
+    background: #092756;
+    background: linear-gradient(135deg, #670d10 0%, #092756 100%);
     width: 270px;
     height: 58px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
-/* ==========================card1 */
 
 /* ========================
    PINK HORIZONTAL CARDS
@@ -276,14 +264,18 @@ body {
     flex-direction: column;
     gap: 5px;
     color: white;
+    overflow: hidden;
 }
 
 .movie_info h3 {
-    font-family: 'Orbitron', sans-serif;;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
     color: #ffccdd;
     margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .movie_info p {
@@ -311,19 +303,21 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 37px;
-    padding: 10px 35px 40px;
+    gap: 20px;
+    padding: 10px 30px 40px;
+    justify-content: center;
 }
 
 .wiget-type-2 {
     position: relative;
     height: 380px;
-    width: 220px;
+    width: 200px;
     border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 8px 30px rgba(0,0,0,0.6);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    flex-shrink: 0;
 }
 
 .wiget-type-2:hover {
@@ -331,8 +325,7 @@ body {
     box-shadow:
         0 25px 60px rgba(0,0,0,0.6),
         -3px 0 20px rgba(255,255,255,0.25),
-        3px 0 20px rgba(255,255,255,0.25),
-        0 0 40px rgba(255,255,255,0.08);
+        3px 0 20px rgba(255,255,255,0.25);
 }
 
 .wiget-type-2::after {
@@ -369,9 +362,7 @@ body {
     pointer-events: none;
 }
 
-.wiget-type-2:hover::before {
-    border-color: rgba(255,255,255,0.2);
-}
+.wiget-type-2:hover::before { border-color: rgba(255,255,255,0.2); }
 
 .poster-img {
     width: 100%;
@@ -431,12 +422,12 @@ body {
 .wiget-type-2:hover .poster-info { transform: translateY(0); }
 
 .poster-info h3 {
-    font-family: 'Orbitron', sans-serif;;
-    font-size: 1.4rem;
-    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
     color: white;
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .stars {
@@ -448,7 +439,6 @@ body {
 .stars span {
     color: #ffd700;
     font-size: 0.78rem;
-    text-shadow: 0 0 8px rgba(255,215,0,0.7);
     letter-spacing: 1px;
 }
 
@@ -467,10 +457,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: color 0.3s ease;
 }
-
-.wiget-type-2:hover .poster-info p { color: rgba(255,255,255,0.95); }
 
 .poster-info p i {
     color: #ee0979;
@@ -511,8 +498,6 @@ body {
     animation: none;
 }
 
-.download-btn:active { transform: scale(0.97); }
-
 .download-btn.downloading {
     background: linear-gradient(135deg, #11998e, #38ef7d);
     animation: none;
@@ -525,41 +510,8 @@ body {
 }
 
 /* ========================
-   MOBILE
+   FOOTER
 ======================== */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #131921;
-        flex-direction: column;
-        display: none;
-        padding: 10px;
-    }
-
-    .nav-links.show { display: flex; }
-    .menu-btn { display: block; }
-
-    .cono-2 {
-        padding: 10px 15px 30px;
-        gap: 15px;
-    }
-
-    .wiget-type-2 {
-        width: calc(50% - 8px);
-        height: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .wiget-type-2 {
-        width: 100%;
-    }
-}
-
-/* FOOTER - style.css mein sabse neeche daalo */
 .footer {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
@@ -577,13 +529,12 @@ body {
 }
 
 .footer-logo {
-    font-family: 'Bebas Neue', cursive;
+    font-family: cursive;
     font-size: 2rem;
     letter-spacing: 4px;
     color: #ee0979;
     text-shadow: 0 0 15px rgba(238, 9, 121, 0.6);
-    font-family:cursive;
-  text-decoration-style: wavy;
+    text-decoration-style: wavy;
     text-decoration-line: underline;
 }
 
@@ -599,6 +550,8 @@ body {
     align-items: center;
     gap: 15px;
     margin: 5px 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .credit-you {
@@ -634,15 +587,150 @@ body {
     font-size: 0.75rem;
     margin-top: 5px;
 }
-/* ```
 
-**`Tumhara Naam` wali jagah apna naam likhdo!** 😄
+/* ========================
+   RESPONSIVE - TABLET (768px)
+======================== */
+@media (max-width: 768px) {
 
-Result:
-```
-SigmaDev
+    /* Navbar */
+    .navbar {
+        padding: 12px 15px;
+    }
 
-Designed & Developed by
-[ 👨‍💻 Tumhara Naam ]  ×  [ 🤖 Claude AI ]
+    .search-box {
+        display: none;
+    }
 
-© 2025 SigmaDev Anime. All rights reserved. */
+    .nav-links {
+        position: absolute;
+        top: 57px;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 10, 30, 0.97);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        display: none;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(238, 9, 121, 0.3);
+        gap: 15px;
+        z-index: 999;
+    }
+
+    .nav-links.show { display: flex; }
+    .menu-btn { display: block; }
+
+    /* Slider */
+    .slider { height: 55vw; min-height: 220px; }
+
+    /* Horizontal cards - 1 column on tablet */
+    .video_contain {
+        grid-template-columns: 1fr;
+        padding: 10px 15px 20px;
+        gap: 15px;
+    }
+
+    .vid_item {
+        height: 160px;
+    }
+
+    .image > img {
+        height: 140px;
+        width: 95px;
+        margin-left: 12px;
+    }
+
+    .movie_info h3 { font-size: 0.85rem; }
+    .movie_info p  { font-size: 0.75rem; }
+
+    /* Poster cards */
+    .cono-2 {
+        padding: 10px 15px 30px;
+        gap: 12px;
+    }
+
+    .wiget-type-2 {
+        width: calc(50% - 6px);
+        height: 280px;
+    }
+
+    /* Section title */
+    .section-title { padding: 20px 15px 12px; }
+    .section-title h2 { font-size: 1.1rem; width: 220px; height: 50px; }
+}
+
+/* ========================
+   RESPONSIVE - MOBILE (480px)
+======================== */
+@media (max-width: 480px) {
+
+    /* Navbar */
+    .logo { font-size: 20px; }
+
+    /* Slider */
+    .slider { height: 60vw; min-height: 200px; }
+    .nav-btn { width: 35px; height: 55px; font-size: 20px; }
+
+    /* Horizontal cards */
+    .vid_item {
+        height: auto;
+        min-height: 140px;
+        padding: 10px 0;
+        gap: 12px;
+    }
+
+    .image > img {
+        height: 120px;
+        width: 85px;
+        margin-left: 10px;
+    }
+
+    .movie_info h3 { font-size: 0.8rem; }
+    .movie_info p  { font-size: 0.7rem; }
+
+    .vid_item .download-btn {
+        width: 110px;
+        font-size: 0.72rem;
+        padding: 6px 0;
+    }
+
+    /* Poster cards - 2 per row */
+    .wiget-type-2 {
+        width: calc(50% - 6px);
+        height: 240px;
+    }
+
+    .poster-info h3 { font-size: 0.72rem; }
+    .poster-info p  { font-size: 0.65rem; }
+    .stars span     { font-size: 0.65rem; }
+    .rating-num     { font-size: 0.65rem; }
+
+    .section-title h2 { font-size: 0.95rem; width: 190px; height: 45px; letter-spacing: 1px; }
+
+    /* Footer */
+    .footer { padding: 20px 15px; }
+    .footer-logo { font-size: 1.5rem; }
+}
+
+/* ========================
+   RESPONSIVE - SMALL (360px)
+======================== */
+@media (max-width: 360px) {
+    .wiget-type-2 {
+        width: 100%;
+        height: 260px;
+    }
+
+    .vid_item {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .image > img {
+        height: 150px;
+        width: 110px;
+        margin-left: 0;
+    }
+}
