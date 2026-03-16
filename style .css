@@ -1,1 +1,812 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+
+
+
+
+    background: #282537;
+    background-image: radial-gradient(circle at top, #3c3b52 0%, #252233 80%);
+    background-size: 200% 200%;
+    animation: breathe 120s ease infinite;
+}
+
+
+@keyframes breathe {
+    25% {
+        background-position: 0% 25%;
+    }
+
+    50% {
+        background-position: 25% 50%;
+    }
+
+    75% {
+        background-position: 50% 75%;
+    }
+
+    100% {
+        background-position: 75% 100%;
+    }
+
+    75% {
+        background-position: 100% 75%;
+    }
+
+    50% {
+        background-position: 75% 50%;
+    }
+
+    25% {
+        background-position: 50% 25%;
+    }
+
+    0% {
+        background-position: 25% 0%;
+    }
+}
+
+
+
+
+
+
+
+
+/* ========================
+   NAVBAR
+======================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+    color: white;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.0);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-family: cursive;
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: #ee0979;
+    text-shadow: 0 0 10px rgba(238, 9, 121, 0.5);
+    text-decoration-style: wavy;
+    text-decoration-line: underline;
+
+
+
+
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-txt {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    width: 200px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+.search-btn {
+    background: #ee0979;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ee0979;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+/* ========================
+   SLIDER
+======================== */
+.slider-container {
+    margin-top: 57px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid rgba(171, 204, 247, 0.6);
+
+    .slider::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.4) 0%,
+                /* upar thoda dark */
+                transparent 50%,
+                /* beech transparent */
+                rgba(0, 0, 0, 0.3) 100%
+                /* neeche zyada dark */
+            );
+        z-index: 2;
+        pointer-events: none;
+    }
+}
+
+.slider {
+    position: relative;
+    height: 89vh;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+    width: 50px;
+    height: 80px;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.nav-btn:hover {
+    background: rgba(238, 9, 121, 0.6);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background: white;
+}
+
+/* ========================
+   SECTION TITLE
+======================== */
+.section-title {
+    padding: 25px 30px 15px;
+}
+
+.section-title h2 {
+    font-family: 'Orbitron', sans-serif;
+    ;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(238, 9, 121, 0.4);
+    background: #092756;
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #670d10 0%, #092756 100%);
+    width: 270px;
+    height: 58px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* ==========================card1 */
+
+/* ========================
+   PINK HORIZONTAL CARDS
+======================== */
+.video_contain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 10px 30px 30px;
+}
+
+.vid_item {
+    height: 210px;
+    background: rgba(255, 182, 193, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.vid_item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(238, 9, 121, 0.3);
+}
+
+.image>img {
+    height: 180px;
+    width: 120px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    margin-left: 15px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.movie_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+
+.movie_info h3 {
+    font-family: 'Orbitron', sans-serif;
+    ;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: #ffccdd;
+    margin-bottom: 3px;
+}
+
+.movie_info p {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.movie_info p i {
+    color: #ee0979;
+    margin-right: 5px;
+    width: 14px;
+}
+
+.vid_item .download-btn {
+    width: 135px;
+    text-decoration: none;
+}
+
+/* ========================
+   POSTER CARDS
+======================== */
+.cono-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 37px;
+    padding: 10px 35px 40px;
+}
+
+.wiget-type-2 {
+    position: relative;
+    height: 380px;
+    width: 220px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.wiget-type-2:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.6),
+        -3px 0 20px rgba(255, 255, 255, 0.25),
+        3px 0 20px rgba(255, 255, 255, 0.25),
+        0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+.wiget-type-2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(105deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.06) 40%,
+            rgba(255, 255, 255, 0.12) 50%,
+            rgba(255, 255, 255, 0.06) 60%,
+            transparent 80%);
+    transform: skewX(-10deg);
+    transition: left 0.7s ease;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.wiget-type-2:hover::after {
+    left: 160%;
+}
+
+.wiget-type-2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: border-color 0.4s ease;
+    z-index: 7;
+    pointer-events: none;
+}
+
+.wiget-type-2:hover::before {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: brightness(0.85);
+}
+
+.wiget-type-2:hover .poster-img {
+    transform: scale(1.08);
+    filter: brightness(1.05);
+}
+
+.poster-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(238, 9, 121, 0.95);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    z-index: 5;
+    box-shadow: 0 0 12px rgba(238, 9, 121, 0.5);
+}
+
+.poster-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top,
+            rgba(8, 0, 25, 0.98) 0%,
+            rgba(8, 0, 25, 0.85) 50%,
+            rgba(8, 0, 25, 0.3) 80%,
+            transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+}
+
+.wiget-type-2:hover .poster-overlay {
+    height: 75%;
+}
+
+.poster-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.4s ease;
+    transform: translateY(4px);
+}
+
+.wiget-type-2:hover .poster-info {
+    transform: translateY(0);
+}
+
+.poster-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    ;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    line-height: 1;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars span {
+    color: #ffd700;
+    font-size: 0.78rem;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+    letter-spacing: 1px;
+}
+
+.rating-num {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+.poster-info p {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.wiget-type-2:hover .poster-info p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.poster-info p i {
+    color: #ee0979;
+    width: 13px;
+    font-size: 0.72rem;
+}
+
+/* ========================
+   DOWNLOAD BUTTON
+======================== */
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 8px;
+    padding: 8px 0;
+    width: 100%;
+    background: linear-gradient(135deg, #ee0979, #7b2ff7);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(238, 9, 121, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0 6px 25px rgba(255, 65, 108, 0.7);
+    transform: scale(1.03);
+    animation: none;
+}
+
+.download-btn:active {
+    transform: scale(0.97);
+}
+
+.download-btn.downloading {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 65, 108, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 65, 108, 0);
+    }
+}
+
+/* ========================
+   MOBILE
+======================== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #131921;
+        flex-direction: column;
+        display: none;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 13px;
+    }
+
+    .slider {
+        margin-top: 0px;
+        width: 100%;
+        height: 20vh;
+    }
+
+    .nav-btn {
+        height: 30px;
+        width: 21px;
+        font-size: 16px;
+    }
+
+    .section-title {
+
+        display: none;
+
+    }
+
+    .section-title h2 {
+
+        display: none;
+
+
+    }
+
+    .footer-logo{
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+
+        font-size: 0.5rem;
+        gap: 5px;
+    }
+
+    .video_contain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    .cono-2 {
+        padding: 10px 15px 30px;
+        gap: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+      hight: 48px;
+    }
+
+    .search-box {
+        width: 220px;
+        height: 29px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+
+
+    .wiget-type-2 {
+        width: calc(50% - 8px);
+        height: 300px;
+    }
+
+    /* footerjjjjjkjjk */
+
+
+
+
+
+
+
+}
+
+@media (max-width: 480px) {
+    .wiget-type-2 {
+        width: 100%;
+    }
+
+    .footer-logo {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    .footer-credits {
+        gap: 8px;
+    }
+
+    .credit-you,
+    .credit-claude {
+        font-size: 0.78rem;
+        padding: 5px 12px;
+    }
+
+    .footer-copy {
+        font-size: 0.7rem;
+    }
+
+    .footer-logo {
+        font-size: 0.8rem;
+    }
+}
+
+/* FOOTER - style.css mein sabse neeche daalo */
+.footer {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 3px solid rgba(27, 2, 14, 0.6);
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: #ee0979;
+    text-shadow: 0 0 15px rgba(238, 9, 121, 0.6);
+    font-family: cursive;
+    text-decoration-style: wavy;
+    text-decoration-line: underline;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.footer-credits {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 5px 0;
+}
+
+.credit-you {
+    background: rgba(238, 9, 121, 0.2);
+    border: 1px solid rgba(238, 9, 121, 0.5);
+    color: #ffccdd;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer-x {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.credit-claude {
+    background: rgba(123, 47, 247, 0.6);
+    border: 1px solid rgba(123, 47, 247, 0.5);
+    color: #d4b0ff;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer-copy {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+/* ```
+
+**`Tumhara Naam` wali jagah apna naam likhdo!** 😄
+
+Result:
+```
+SigmaDev
+
+Designed & Developed by
+[ 👨‍💻 Tumhara Naam ]  ×  [ 🤖 Claude AI ]
+
+© 2025 SigmaDev Anime. All rights reserved. */
