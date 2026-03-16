@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigmaDev - Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #282537;
+            background-image: radial-gradient(circle at top, #3c3b52 0%, #252233 80%);
+            background-size: 200% 200%;
+            animation: breathe 8s ease infinite;
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+        }
+
+        @keyframes breathe {
+            0% {
+                background-position: 50% 0%;
+            }
+
+            50% {
+                background-position: 50% 100%;
+            }
+
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 26px;
+            letter-spacing: 3px;
+            color: #ee0979;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(238, 9, 121, 0.5);
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ee0979;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 57px;
+            padding: 60px 30px 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(123, 47, 247, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 4.5rem;
+            letter-spacing: 10px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            border-radius: 10px;
+            margin: 20px auto 0;
+        }
+
+        /* MAIN */
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px 80px;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.3rem;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .section-title i {
+            color: #ee0979;
+        }
+
+        /* PROJECT CARDS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* PROJECT CARD */
+        .project-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(238, 9, 121, 0.4);
+            box-shadow: 0 20px 50px rgba(238, 9, 121, 0.15);
+        }
+
+        /* Card shimmer */
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(105deg,
+                    transparent 20%,
+                    rgba(255, 255, 255, 0.04) 50%,
+                    transparent 80%);
+            transition: left 0.7s ease;
+            pointer-events: none;
+        }
+
+        .project-card:hover::after {
+            left: 160%;
+        }
+
+        /* CARD BANNER */
+        .card-banner {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.8);
+            transition: filter 0.4s, transform 0.4s;
+        }
+
+        .project-card:hover .card-banner {
+            filter: brightness(1);
+            transform: scale(1.03);
+        }
+
+        .banner-placeholder {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* CARD BODY */
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .card-tag {
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .tag-pink {
+            background: rgba(238, 9, 121, 0.2);
+            border: 1px solid rgba(238, 9, 121, 0.4);
+            color: #ffccdd;
+        }
+
+        .tag-purple {
+            background: rgba(123, 47, 247, 0.2);
+            border: 1px solid rgba(123, 47, 247, 0.4);
+            color: #d4b0ff;
+        }
+
+        .tag-blue {
+            background: rgba(0, 180, 255, 0.15);
+            border: 1px solid rgba(0, 180, 255, 0.3);
+            color: #a0e4ff;
+        }
+
+        .tag-gray {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .card-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .card-desc span {
+            color: #ee0979;
+        }
+
+        /* CARD FOOTER */
+        .card-footer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(238, 9, 121, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(238, 9, 121, 0.5) !important;
+            color: #ee0979;
+        }
+
+        /* STATUS BADGE */
+        .status-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 5;
+        }
+
+        .status-live {
+            background: rgba(0, 200, 100, 0.9);
+            color: white;
+        }
+
+        .status-wip {
+            background: rgba(255, 160, 0, 0.9);
+            color: white;
+        }
+
+        .status-soon {
+            background: rgba(123, 47, 247, 0.9);
+            color: white;
+        }
+
+        /* COMING SOON CARD */
+        .coming-soon-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 40px 25px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .coming-soon-card:hover {
+            border-color: rgba(238, 9, 121, 0.3);
+            background: rgba(238, 9, 121, 0.04);
+        }
+
+        .cs-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .coming-soon-card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+        }
+
+        .coming-soon-card p {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(238, 9, 121, 0.3);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            color: #ee0979;
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+
+
+        }
+
+        .footer-credits {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .credit-you {
+            background: rgba(238, 9, 121, 0.2);
+            border: 1px solid rgba(238, 9, 121, 0.5);
+            color: #ffccdd;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .footer-x {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+        }
+
+        .credit-claude {
+            background: rgba(123, 47, 247, 0.2);
+            border: 1px solid rgba(123, 47, 247, 0.5);
+            color: #d4b0ff;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: 6px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .i {
+            position: relative;
+            left: 30px;
+
+            list-style-position: inside;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-biohazard"></i>AniFlow</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movie.html">Movies</a></li>
+            <li><a href="projects.html" style="color:#ee0979">Projects</a></li>
+            <li><a href="about us.html">About</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Projects</h1>
+        <p>Discover the magic behind the scenes</p>
+        <div class="hero-divider"></div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- LIVE PROJECTS -->
+        <div class="section-title">
+            <i class="fa-solid fa-bolt"></i> Live Projects
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- SIGMADEV ANIME -->
+            <div class="project-card">
+                <span class="status-badge status-live">🟢 Live</span>
+                <div class="banner-placeholder" style="background: linear-gradient(135deg, #1a0a2e, #2d1060);">
+                    🎌
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="card-tag tag-pink">HTML</span>
+                        <span class="card-tag tag-purple">CSS</span>
+                        <span class="card-tag tag-blue">JavaScript</span>
+                    </div>
+                    <h2 class="card-title">SigmaDev Anime</h2>
+                    <p class="card-desc">
+                        Ek <span>anime download website</span>
+                    <div class="i">
+                        <ul>
+                            <li>Anime Download: Dedicated to finding HD anime.</li>
+                            <li>Features: Includes sliders, cards, and detailed pages. </li>
+                            <li>Design: Modern, responsive, and user-friendly.</li>
+                        </ul>
+                    </div>
+                    </p>
+                    <div class="card-footer">
+                        <a href="index.html" class="card-btn btn-primary">
+                            <i class="fa-solid fa-eye"></i> Visit
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADD YOUR PROJECT HERE -->
+            <div class="project-card">
+                <span class="status-badge status-wip">🟡 In Progress</span>
+                <div class="banner-placeholder" style="background: linear-gradient(135deg, #0a1a2e, #102040);">
+                    💻
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="card-tag tag-pink">HTML</span>
+                        <span class="card-tag tag-purple">CSS</span>
+                        <span class="card-tag tag-gray">Coming Soon</span>
+                    </div>
+                    <h2 class="card-title">New Project</h2>
+                    <p class="card-desc">
+                        something new <span>stay tuned!</span>
+                        we build as soon as posible <i class="fa-solid fa-truck-fast"></i>
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-btn btn-outline" style="cursor:default;">
+                            <i class="fa-solid fa-clock"></i> Coming Soon
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COMING SOON SECTION -->
+        <div class="section-title">
+            <i class="fa-solid fa-hourglass-half"></i> Coming Soon
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="coming-soon-card">
+                <div class="cs-card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>Mobile App</h3>
+                <p>something interesting</p>
+            </div>
+
+            <div class="coming-soon-card">
+                <div class="cs-card-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <h3>Game Project</h3>
+                <p>Something exciting!</p>
+            </div>
+
+            <div class="coming-soon-card">
+                <div class="cs-card-icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>New Website</h3>
+                <p>Something exciting!</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo"><i class="fa-solid fa-biohazard"></i>AniFlow</div>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin:5px 0;">Designed & Developed by</p>
+        <div class="footer-credits">
+            <span class="credit-you"><i class="fa-solid fa-code"></i> Pawan Chouhan</span>
+            <span class="footer-x"><i class="fa-solid fa-handshake"></i></span>
+            <span class="credit-claude"><i class="fa-solid fa-brain"></i> Claude AI</span>
+        </div>
+        <p class="footer-copy">© 2026-2030 SigmaDev Anime. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigmaDev - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #282537;
+            background-image: radial-gradient(circle at top, #3c3b52 0%, #252233 80%);
+            background-size: 200% 200%;
+            animation: breathe 8s ease infinite;
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+        }
+
+        @keyframes breathe {
+            0% {
+                background-position: 50% 0%;
+            }
+
+            50% {
+                background-position: 50% 100%;
+            }
+
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 26px;
+            letter-spacing: 3px;
+            color: #ee0979;
+            text-shadow: 0 0 10px rgba(238, 9, 121, 0.5);
+            text-decoration: none;
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ee0979;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 57px;
+            padding: 80px 30px 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(238, 9, 121, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 5rem;
+            letter-spacing: 8px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 30px 60px;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(238, 9, 121, 0.2);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .about-card:hover {
+            border-color: rgba(238, 9, 121, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .about-card h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            color: #ee0979;
+            margin-bottom: 12px;
+        }
+
+        .about-card h2 i {
+            margin-right: 10px;
+        }
+
+        .about-card p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.8;
+        }
+
+        /* TEAM */
+        .team-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(123, 47, 247, 0.3);
+            border-radius: 15px;
+            padding: 25px 30px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            border-color: rgba(238, 9, 121, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(238, 9, 121, 0.2);
+        }
+
+        .team-card .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 12px;
+        }
+
+        .team-card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .team-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* FEEDBACK FORM */
+        .feedback-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+        }
+
+        .feedback-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feedback-form {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(238, 9, 121, 0.25);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .form-group label i {
+            color: #ee0979;
+            margin-right: 6px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #ee0979;
+            box-shadow: 0 0 15px rgba(238, 9, 121, 0.2);
+        }
+
+        .form-group select option {
+            background: #252233;
+            color: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(238, 9, 121, 0.5);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(238, 9, 121, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(238, 9, 121, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(238, 9, 121, 0);
+            }
+        }
+
+        /* SUCCESS MSG */
+        .success-msg {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(17, 153, 142, 0.15);
+            border: 1px solid rgba(17, 153, 142, 0.4);
+            border-radius: 12px;
+            margin-top: 15px;
+            color: #38ef7d;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(238, 9, 121, 0.3);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            color: #ee0979;
+            text-shadow: 0 0 15px rgba(238, 9, 121, 0.6);
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+        }
+
+        .footer-credits {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .credit-you {
+            background: rgba(238, 9, 121, 0.2);
+            border: 1px solid rgba(238, 9, 121, 0.5);
+            color: #ffccdd;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .footer-x {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .credit-claude {
+            background: rgba(123, 47, 247, 0.2);
+            border: 1px solid rgba(123, 47, 247, 0.5);
+            color: #d4b0ff;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-biohazard"></i>AniFlow</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" style="color:#ee0979">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>About Us</h1>
+        <p>🎌 We bring anime to your screen</p>
+    </div>
+
+    <!-- ABOUT CARDS -->
+    <div class="about-section">
+
+        <div class="about-card">
+            <h2><i class="fa-solid fa-circle-info"></i> Who We Are</h2>
+            <p>SigmaDev is a free anime download platform made with love for anime fans. Our goal is to make your
+                favorite anime easily accessible — in high quality, completely free. We are a small team of developers
+                and anime lovers who want to share the magic of anime with everyone.</p>
+        </div>
+
+        <div class="about-card">
+            <h2><i class="fa-solid fa-bullseye"></i> Our Mission</h2>
+            <p>To provide the best anime watching and downloading experience — fast, free, and hassle-free. We believe
+                every anime fan deserves access to great content without barriers. From classics to new releases, we
+                have it all.</p>
+        </div>
+
+        <!-- TEAM -->
+        <div class="about-card">
+            <h2><i class="fa-solid fa-users"></i> Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar"><i class="fa-solid fa-code"></i></div>
+                    <h3>Pawan Chouhan</h3>
+                    <p>Founder & Developer</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Claude AI</h3>
+                    <p>Co-Developer</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FEEDBACK FORM -->
+    <div class="feedback-section">
+        <h2 class="feedback-title"><i class="fa-solid fa-comment-dots"></i> Send Feedback</h2>
+
+        <!-- 
+            FORMSPREE SETUP:
+            1. formspree.io pe jao
+            2. Free account banao
+            3. New form banao
+            4. Neeche action mein apna link daalo
+        -->
+        <form class="feedback-form" action="https://formspree.io/f/mbdzyerg" method="POST">
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-user"></i> Your Name</label>
+                <input type="text" name="name" placeholder="Apna naam likho..." required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-envelope"></i> Email</label>
+                <input type="email" name="email" placeholder="apni@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-tag"></i> Feedback Type</label>
+                <select name="type">
+                    <option value="suggestion">💡 Suggestion</option>
+                    <option value="bug">🐛 Bug Report</option>
+                    <option value="request">🎌 Anime Request</option>
+                    <option value="other">📝 Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-message"></i> Message</label>
+                <textarea name="message" placeholder="Send your feedback here..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send Feedback
+            </button>
+
+            <div class="success-msg" id="successMsg">
+                ✅ Shukriya! Tumhara feedback mil gaya! 🎌
+            </div>
+
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo"><i class="fa-solid fa-biohazard"></i>AniFlow</div>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin: 5px 0;">Designed & Developed by</p>
+        <div class="footer-credits">
+            <span class="credit-you"><i class="fa-solid fa-code"></i> Pawan Chouhan</span>
+            <span class="footer-x"><i class="fa-solid fa-handshake"></i></span>
+            <span class="credit-claude"><i class="fa-solid fa-brain"></i> Claude AI</span>
+        </div>
+        <p class="footer-copy">© 2026-2030 SigmaDev Anime. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Form submit success message
+        const form = document.querySelector('.feedback-form');
+        form.addEventListener('submit', function (e) {
+            setTimeout(() => {
+                document.getElementById('successMsg').style.display = 'block';
+            }, 500);
+        });
+    </script>
+
+</body>
+
+</html>

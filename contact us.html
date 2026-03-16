@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigmaDev - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a65ed9d65.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #282537;
+            background-image: radial-gradient(circle at top, #3c3b52 0%, #252233 80%);
+            background-size: 200% 200%;
+            animation: breathe 8s ease infinite;
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+        }
+
+        @keyframes breathe {
+            0% {
+                background-position: 50% 0%;
+            }
+
+            50% {
+                background-position: 50% 100%;
+            }
+
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 26px;
+            letter-spacing: 3px;
+            color: #ee0979;
+            text-shadow: 0 0 10px rgba(238, 9, 121, 0.5);
+            text-decoration: none;
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ee0979;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 57px;
+            padding: 80px 30px 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(238, 9, 121, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 5rem;
+            letter-spacing: 8px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 30px 80px;
+        }
+
+        /* SECTION TITLE */
+        .section-heading {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            text-align: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* SOCIAL MEDIA CARDS */
+        .social-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .social-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 25px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .social-card:hover {
+            transform: translateX(8px);
+        }
+
+        /* Instagram */
+        .instagram {
+            background: linear-gradient(135deg, rgba(225, 48, 108, 0.15), rgba(193, 53, 132, 0.15));
+            border: 1px solid rgba(225, 48, 108, 0.3);
+        }
+
+        .instagram:hover {
+            box-shadow: 0 8px 30px rgba(225, 48, 108, 0.3);
+            border-color: rgba(225, 48, 108, 0.7);
+        }
+
+        /* WhatsApp */
+        .whatsapp {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(18, 140, 126, 0.15));
+            border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp:hover {
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+            border-color: rgba(37, 211, 102, 0.7);
+        }
+
+        /* Telegram */
+        .telegram {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.15), rgba(0, 104, 200, 0.15));
+            border: 1px solid rgba(0, 136, 204, 0.3);
+        }
+
+        .telegram:hover {
+            box-shadow: 0 8px 30px rgba(0, 136, 204, 0.3);
+            border-color: rgba(0, 136, 204, 0.7);
+        }
+
+        .social-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .instagram .social-icon {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .whatsapp .social-icon {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .telegram .social-icon {
+            background: linear-gradient(135deg, #0088cc, #0068c8);
+        }
+
+        .social-info h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .social-info p {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 2px;
+        }
+
+        .social-arrow {
+            margin-left: auto;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-card:hover .social-arrow {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        /* WHATSAPP FLOATING BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            animation: floatPulse 2s infinite;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes floatPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* INFO CARD */
+        .info-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(238, 9, 121, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: #ee0979;
+            margin-bottom: 10px;
+        }
+
+        .info-card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(238, 9, 121, 0.3);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            color: #ee0979;
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+
+        }
+
+        .footer-credits {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .credit-you {
+            background: rgba(238, 9, 121, 0.2);
+            border: 1px solid rgba(238, 9, 121, 0.5);
+            color: #ffccdd;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .footer-x {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+        }
+
+        .credit-claude {
+            background: rgba(123, 47, 247, 0.2);
+            border: 1px solid rgba(123, 47, 247, 0.5);
+            color: #d4b0ff;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 20px 15px 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-biohazard"></i>AniFlow</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="contact us.html" style="color:#ee0979">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Contact Us</h1>
+        <p>🎌 Hum yahan hain — baat karo!</p>
+    </div>
+
+    <div class="container">
+
+        <!-- INFO CARD -->
+        <div class="info-card">
+            <i class="fa-solid fa-headset"></i>
+            <h3>We're Always Here! 🔥</h3>
+            <p>Any type of inquiry, anime request, or problem — feel free to reach out!<br>We reply quickly! </p>
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <h2 class="section-heading">📱 Find Us Here</h2>
+
+        <div class="social-grid">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/mr.pawan_here/" target="_blank" class="social-card instagram">
+                <div class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="social-info">
+                    <h3>Instagram</h3>
+                    <p>@mr.pawan_here</p>
+                </div>
+                <i class="fa-solid fa-arrow-right social-arrow"></i>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/8463038097" target="_blank" class="social-card whatsapp">
+                <div class="social-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="social-info">
+                    <h3>WhatsApp</h3>
+                    <p>Direct message karo!</p>
+                </div>
+                <i class="fa-solid fa-arrow-right social-arrow"></i>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/username_pawan_here" target="_blank" class="social-card telegram">
+                <div class="social-icon">
+                    <i class="fa-brands fa-telegram"></i>
+                </div>
+                <div class="social-info">
+                    <h3>Telegram</h3>
+                    <p>Anime updates ke liye join karo!</p>
+                </div>
+                <i class="fa-solid fa-arrow-right social-arrow"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/TUMHARA_NUMBER" target="_blank" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo"><i class="fa-solid fa-biohazard"></i>AniFlow</div>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin:5px 0;">Designed & Developed by</p>
+        <div class="footer-credits">
+            <span class="credit-you"><i class="fa-solid fa-code"></i> Pawan Chounan</span>
+            <span class="footer-x"></span><i class="fa-solid fa-handshake"></i></span>
+            <span class="credit-claude"><i class="fa-solid fa-brain"></i> Claude AI</span>
+        </div>
+        <p class="footer-copy">© 2026-2030 SigmaDev Anime. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

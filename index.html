@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aniflow</title>
+
+    <link rel="stylesheet" href="style .css">
+    <link rel="stylesheet" href="model.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+        <div class="logo "><i class="fa-solid fa-biohazard"></i>AniFlow</div>
+        <div class="search-box">
+            <input class="search-txt" type="text" placeholder="Search anime...">
+            <a class="search-btn"><i class="fas fa-search"></i></a>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="movie.html">Movies</a></li>
+            <li><a href="About us.html">About us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+        </ul>
+        <div class="menu-btn" id="menuBtn">☰</div>
+    </nav>
+
+
+    <!-- SLIDER -->
+    <div class="slider-container">
+
+        <div class="slider">
+            <div class="slide active"><img
+                    src="https://i.ibb.co/W4kvGBSB/Pink-and-Purple-Geometric-Thank-You-Banner.jpg" alt=""></div>
+            <div class="slide"><img src="https://i.ibb.co/xqM7Fdsj/4f3288a26c2c49289460f02b5843ad0a327412ceeee8d5a3ac18d44e70edcc38.jpg" alt=""></div>
+            <div class="slide"><img src="https://i.ibb.co/9k9tBbYq/Whats-App-Image-2026-03-13-at-10-02-12-AM.jpg"
+                    alt=""></div>
+            <div class="slide"><img src="https://i.ibb.co/NdbR9pLH/A-seleint-voice-1.jpg"></div>
+            <div class="slide"><img src="https://m.media-amazon.com/images/S/pv-target-images/2789c24b77fc058ce9be4781eb162f7377b1d30a67f483c9b8ce587a0896f20a.png" alt=""></div>
+            <div class="slide"><img src="https://i.ibb.co/PG6Pn7hP/Petals-fall-but-memories-never-do.jpg"></div>
+            <div class="slide"><img src="https://wallpaperbat.com/img/826442-ichigyou-wallpaper.png" alt=""></div>
+            <div class="slide"><img src="https://i.ibb.co/twqht8xD/Time-1.jpg" alt=""></div>
+            <div class="slide"><img src="https://i.ibb.co/Z3xN5p8/thumb-1920-746111.jpg"></div>
+            <div class="slide"><img src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Screenshot-2024-10-15-021920.png"alt=""></div>
+            <div class="slide"><img src="https://img.loveslides.com/templates/preview/anime-vibes-marketing-plan-137454.jpg"></div>
+            <div class="slide"><img src="https://i.ibb.co/0yNF7hb7/Whats-App-Image-2026-03-13-at-10-02-12-AM-1.jpg">
+            </div>
+            <div class="slide"><img src="https://i.ibb.co/tM5sZL4J/5-Centemeter-per-second.jpg" alt=""></div>
+        </div>
+        <button class="nav-btn prev"><i class="fa-solid fa-angles-left"></i></button>
+        <button class="nav-btn next"><i class="fa-solid fa-angles-right"></i></button>
+        <div class="dots-container"></div>
+    </div>
+
+    <!-- card1 -->
+    <div class="section-title">
+        <h2><i class="fa-solid fa-eye"></i> Most viewed</h2>
+    </div>
+
+    <div class="video_contain">
+
+        <div class="vid_item" onclick="openModal(0)">
+            <div class="image"><img
+                    src="https://m.media-amazon.com/images/S/pv-target-images/3b33b787082c712fa4a108355be493ebb42fcd4cd75ccfeb6ec3fae8d19ebf39.jpg"
+                    alt=""></div>
+            <div class="movie_info">
+                <h3>Your Name</h3>
+                <p><i class="fa-solid fa-star"></i> 9.5/10</p>
+                <p><i class="fa-solid fa-clapperboard"></i> Drama, Romance, master piece</p>
+                <p><i class="fa-solid fa-calendar-days"></i> 26 August 2016</p>
+                <p><i class="fa-solid fa-hourglass-start"></i> 1h 50min</p>
+                <p><i class="fa-solid fa-film"></i> 1080P</p>
+                <a href="https://drive.google.com/file/d/1a5QJYS5K3L-SOhO-9JLMj91VscbQf24A/view?usp=drive_link"
+                    target="_blank"><button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                        <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                        <span class="btn-text">Download</span>
+                    </button></a>
+            </div>
+        </div>
+
+        <div class="vid_item" onclick="openModal(1)">
+            <div class="image"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSx5tPw_cc--fDzksEpNYYYaPEKeWF_w2wh_m7fuFhtTFlfWhJqtO13q1KAfvNqclxj2I9sw&s=10.jpg"
+                    alt=""></div>
+            <div class="movie_info">
+                <h3>weathering with you</h3>
+                <p><i class="fa-solid fa-star"></i> 9.5/10</p>
+                <p><i class="fa-solid fa-clapperboard"></i> Romance, Fantasy</p>
+                <p><i class="fa-solid fa-calendar-days"></i> 26 August 2016</p>
+                <p><i class="fa-solid fa-hourglass-start"></i> 1h 50min 03sec</p>
+                <p><i class="fa-solid fa-film"></i> 720P</p>
+                <a href="https://drive.google.com/file/d/1d_SpMMDRaARCAPtcOpyiBTtDjz4B996T/view?usp=drive_link"
+                    target="_blank">
+                    <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                        <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                        <span class="btn-text">Download</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="vid_item" onclick="openModal(2)">
+            <div class="image"><img src="https://upload.wikimedia.org/wikipedia/en/3/32/A_Silent_Voice_Film_Poster.jpg"
+                    alt=""></div>
+            <div class="movie_info">
+                <h3>Selient Voice</h3>
+                <p><i class="fa-solid fa-star"></i> 8.9/10</p>
+                <p><i class="fa-solid fa-clapperboard"></i>Drama, Romance, Slice of Life.</p>
+                <p><i class="fa-solid fa-calendar-days"></i> September 17, 2016</p>
+                <p><i class="fa-solid fa-hourglass-start"></i> 2h 09min 23sec</p>
+                <p><i class="fa-solid fa-film"></i> 1080P</p>
+                <a href="https://drive.google.com/file/d/13ogPuqsXxQwme7pkkyXYrnDV7KoVmqrV/view?usp=drive_link"
+                    target="_blank">
+                    <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                        <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                        <span class="btn-text">Download</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="vid_item" onclick="openModal(3)">
+            <div class="image"><img
+                    src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1541984865i/39863194.jpg"
+                    alt=""></div>
+            <div class="movie_info">
+                <h3>I want to eat your pancreas</h3>
+                <p><i class="fa-solid fa-star"></i> 8.1/10</p>
+                <p><i class="fa-solid fa-clapperboard"></i> coming-of-age and drama</p>
+                <p><i class="fa-solid fa-calendar-days"></i> 1 september 2018</p>
+                <p><i class="fa-solid fa-hourglass-start"></i> 1h 45min 16sec</p>
+                <p><i class="fa-solid fa-film"></i> 1080P</p>
+                <a href="https://drive.google.com/file/d/123iCv4iu3v50gLTQpKJ5wfoiDk3fgqaW/view?usp=drive_link"
+                    target="_blank"> <button class="download-btn"
+                        onclick="event.stopPropagation(); startDownload(this)">
+                        <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                        <span class="btn-text">Download</span>
+                    </button></a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ROW 1 - 5 POSTER CARDS -->
+    <div class="section-title">
+        <h2><i class="fa-solid fa-eye"></i> Most viewed</h2>
+    </div>
+
+    <div class="cono-2">
+
+        <div class="wiget-type-2" onclick="openModal(4)">
+            <img class="poster-img"
+                src="https://m.media-amazon.com/images/M/MV5BMTI4MDIyNzQyNl5BMl5BanBnXkFtZTcwNDcyNTk2MQ@@._V1_.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>5 Centimeters per Second</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">7.3/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> Drama, Romance</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 02min 46sec</p>
+                    <a href="https://drive.google.com/file/d/1HZugwCm3Z-PGQXrkVJnAPEMXg1O3YM8i/view?usp=drive_link">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(5)">
+            <img class="poster-img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlGFFVjtkJLbvDxxn76Mq7MoxhDmyZV_aXIw&s.jpg"
+                alt="">
+            <div class="poster-badge">1080P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>Your Name</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">9.0/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> Romance, Fantasy</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 52min</p>
+                    <a href="" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(6)">
+            <img class="poster-img"
+                src="https://w0.peakpx.com/wallpaper/70/887/HD-wallpaper-hello-world-anime-poster.jpg" alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>Hello World</h3>
+                    <div class="stars"><span>★★★★☆</span><span class="rating-num">8.7/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> Romance/Sci-fi </p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 37min 43sec</p>
+                    <a href="https://drive.google.com/file/d/1hMrLxuXbeYjIt0M4CzQ61wVuFgDXJicn/view?usp=drive_link"
+                        target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(7)">
+            <img class="poster-img"
+                src="https://m.media-amazon.com/images/M/MV5BNTY5MmE2OGMtN2IxNC00MDY4LTkwMGEtZDUzOTYyNWE0ZTNjXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+                alt="">
+            <div class="poster-badge">1080P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>grave of the fireflies</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">8.5/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> war drama and tragedy</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i>1h 28min 53sec</p>
+                    <a href="https://drive.google.com/file/d/1zViz0gnqf62_XXNMoTeITkVkmmnHAI0O/view?usp=drive_link"
+                        target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(8)">
+            <img class="poster-img" src="https://img.hankyung.com/photo/202308/BF.34289290.1.jpg" alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>the tunnel to summer </h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">7.2/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i>sci-fi, romance, and drama</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 21min 51sec</p>
+                    <a href="https://drive.google.com/file/d/13tR6-t9GJwdEOQnGZZec0dqRVKhp8E92/view?usp=drive_link"
+                        target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SECTION TITLE 2 -->
+    <div class="section-title">
+        <h2><i class="fa-solid fa-fire-flame-curved"></i> Popular Anime</h2>
+    </div>
+
+    <!-- ROW 2 - 5 POSTER CARDS -->
+    <div class="cono-2">
+
+        <div class="wiget-type-2" onclick="openModal(9)">
+            <img class="poster-img"
+                src="https://m.media-amazon.com/images/M/MV5BZWFlZTRhMTMtYWM1Yy00NTViLWExZjktNjVjMWZiM2Y4N2JiXkEyXkFqcGc@._V1_.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>A whisker away</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">7.7/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> romantic fantasy</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 44min 27sec</p>
+                    <a href="https://drive.google.com/file/d/1SGfy2LdR1mhmDhwjtOj0qkhI7rrNAB5T/view?usp=drive_link" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(10)">
+            <img class="poster-img"
+                src="https://i0.wp.com/www.adorebooks.in/wp-content/uploads/2023/12/To-Me-The-One-Who-Loved-You-Yomoji-Otone.jpg?fit=1080%2C1080&ssl=1"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>To Me, The One Who Loved You</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">7.5/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i>  science fiction/romance</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 38min 33sec</p>
+                    <a href="to-me-the-one-who-loved-you.html" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Visit Site</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(11)">
+            <img class="poster-img"
+                src="https://upload.wikimedia.org/wikipedia/en/8/8f/Over_the_Sky_theatrical_release_poster.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>Over the Sky</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">6.5/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> adolescent fantasy drama</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 35min 06sec</p>
+                    <a href="https://drive.google.com/file/d/1NjPJWKkqruLRkQ4RQWQQ59eeYsjD3nFV/view?usp=drive_link" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(12)">
+            <img class="poster-img"
+                src="https://resizing.flixster.com/-0x8zDhqrGyT796AAiu0G6fiSTk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc4YWQ2Y2ZlLTYwMmQtNDgzZC1iNGVjLTNjOTBlNTRhOGM1Ny5qcGc="
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>josee, the tiger and the fish</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">7.5/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> anime, drama, and romance</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 38min 38sec 35sec</p>
+                    <a href="https://drive.google.com/file/d/1d0N9uVFLgmxFRs18hzc05zEraRiyQaCB/view?usp=drive_link" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(13)">
+            <img class="poster-img"
+                src="https://m.media-amazon.com/images/M/MV5BMTg5ODA4MTY1OV5BMl5BanBnXkFtZTcwODYwMzAzMQ@@._V1_.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>the place promised in our early days </h3>
+                    <div class="stars"><span>★★★★☆</span><span class="rating-num">7.0/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> sci-fi romantic drama</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 30min 20sec</p>
+                    <a href="https://drive.google.com/file/d/123xqwo0YGoLaysW6FfjxKjq9-4MnOzQj/view?usp=drive_link" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section-title">
+        <h2><i class="fa-solid fa-fire-flame-curved"></i> Related Anime</h2>
+    </div>
+
+
+    <!-- ===============================================10-----15=============================================== -->
+
+
+      <div class="cono-2">
+
+        <div class="wiget-type-2" onclick="openModal(14)">
+            <img class="poster-img"
+                src="https://upload.wikimedia.org/wikipedia/en/0/02/FireworksAnimeFilm.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>Fireworks</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">7.7/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> romance and drama</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 30min 03sec</p>
+                    <a href="https://drive.google.com/file/d/14d1uZXUqidXRzW54Ob7j7Ac0C4pDdEAU/view?usp=drive_link" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">Download Now</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(18)">
+            <img class="poster-img"
+                src="https://i.ibb.co/LX54Tm9F/Purple-Black-Illustrative-Anime-Story-Book-Cover-A4-Document.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>comming soon</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">7.5/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i>  science fiction/romance</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 1h 38min 33sec</p>
+                    <a href="to-me-the-one-who-loved-you.html" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">comming soon</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(18)">
+            <img class="poster-img"
+                src="https://i.ibb.co/LX54Tm9F/Purple-Black-Illustrative-Anime-Story-Book-Cover-A4-Document.jpg"
+                alt="">
+            <div class="poster-badge">1080P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>comming soon</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">9.1/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> Action, Fantasy</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 24min/ep</p>
+                    <a href="movie.html" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">comming soon</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(18)">
+            <img class="poster-img"
+                src="https://i.ibb.co/LX54Tm9F/Purple-Black-Illustrative-Anime-Story-Book-Cover-A4-Document.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>cooming soon</h3>
+                    <div class="stars"><span>★★★★★</span><span class="rating-num">9.0/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> Action, Adventure</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 23min/ep</p>
+                    <a href="movie.html" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">comming soon</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wiget-type-2" onclick="openModal(18)">
+            <img class="poster-img"
+                src="https://i.ibb.co/LX54Tm9F/Purple-Black-Illustrative-Anime-Story-Book-Cover-A4-Document.jpg"
+                alt="">
+            <div class="poster-badge">720P</div>
+            <div class="poster-overlay">
+                <div class="poster-info">
+                    <h3>comming soon</h3>
+                    <div class="stars"><span>★★★★☆</span><span class="rating-num">7.9/10</span></div>
+                    <p><i class="fa-solid fa-clapperboard"></i> Action, Horror</p>
+                    <p><i class="fa-solid fa-hourglass-start"></i> 24min/ep</p>
+                    <a href="movie.html" target="_blank">
+                        <button class="download-btn" onclick="event.stopPropagation(); startDownload(this)">
+                            <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
+                            <span class="btn-text">comming soon</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- MODAL POPUP -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModalBtn()"><i class="fa-solid fa-xmark"></i></button>
+            <img class="modal-img" id="modalImg" src="" alt="">
+            <div class="modal-info">
+                <span class="badge" id="modalBadge">HD</span>
+                <h2 id="modalTitle"></h2>
+                <p><i class="fa-solid fa-star"></i> <span id="modalRating"></span></p>
+                <p><i class="fa-solid fa-clapperboard"></i> <span id="modalGenre"></span></p>
+                <p><i class="fa-solid fa-calendar-days"></i> <span id="modalDate"></span></p>
+                <p><i class="fa-solid fa-hourglass-start"></i> <span id="modalDuration"></span></p>
+                <p><i class="fa-solid fa-film"></i> <span id="modalQuality"></span></p>
+                <p class="modal-desc" id="modalDesc"></p>
+                <button class="modal-download" onclick="startModalDownload(this)">
+                    <i class="fa-solid fa-download"></i> Download Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- FOOTER - index.html mein sabse neeche, </body> se pehle daalo -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo"><i class="fa-solid fa-biohazard"></i>AniFlow</div>
+            <p class="footer-text">Designed & Developed by</p>
+            <div class="footer-credits">
+                <span class="credit-you"><i class="fa-solid fa-code"></i> Pawan Chouhan</span>
+                <span class="footer-x"><i class="fa-solid fa-handshake"></i></span>
+                <span class="credit-claude"><i class="fa-solid fa-brain"></i> Claude AI</span>
+            </div>
+            <p class="footer-copy">© 2026-2030 SigmaDev Anime. All rights reserved.</p>
+            <p class="footer-copy">If any issue please contact us. meerachouhan065@gmail.com or report it</p>
+        </div>
+    </footer>
+</body>
+
+</html>

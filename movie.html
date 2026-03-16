@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigmaDev - Coming Soon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+
+            font-family: 'Orbitron', sans-serif;
+            /* ← change karo */
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #282537;
+            background-image: radial-gradient(circle at top, #3c3b52 0%, #252233 80%);
+            background-size: 200% 200%;
+            animation: breathe 8s ease infinite;
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes breathe {
+            0% {
+                background-position: 50% 0%;
+            }
+
+            50% {
+                background-position: 50% 100%;
+            }
+
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 30px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 26px;
+            letter-spacing: 3px;
+            color: #ee0979;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(238, 9, 121, 0.5);
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ee0979;
+        }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 100px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* BG glow */
+        .main::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(238, 9, 121, 0.1), transparent 70%);
+            pointer-events: none;
+            animation: glowPulse 4s ease infinite;
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(238, 9, 121, 0.5);
+            border-radius: 50%;
+            animation: float linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ICON */
+        .cs-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: iconBounce 3s ease infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes iconBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* TEXT */
+        .cs-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 5rem;
+            letter-spacing: 10px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+            line-height: 1;
+        }
+
+        .cs-subtitle {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.6rem;
+            letter-spacing: 6px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            border-radius: 10px;
+            margin: 25px auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-msg {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            max-width: 520px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-msg span {
+            color: #ee0979;
+            font-weight: 700;
+        }
+
+        /* TAGS */
+        .cs-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-tag {
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .cs-tag i {
+            color: #ee0979;
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            margin-top: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #ee0979, #7b2ff7);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(238, 9, 121, 0.5);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(238, 9, 121, 0.3);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            color: #ee0979;
+            font-family: cursive;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+        }
+
+        .footer-credits {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            margin: 8px 0;
+        }
+
+        .credit-you {
+            background: rgba(238, 9, 121, 0.2);
+            border: 1px solid rgba(238, 9, 121, 0.5);
+            color: #ffccdd;
+            padding: 5px 14px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .footer-x {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .credit-claude {
+            background: rgba(123, 47, 247, 0.2);
+            border: 1px solid rgba(123, 47, 247, 0.5);
+            color: #d4b0ff;
+            padding: 5px 14px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .cs-title {
+                font-size: 3.2rem;
+                letter-spacing: 6px;
+            }
+
+            .cs-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .cs-icon {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fa-solid fa-biohazard"></i>AniFlow</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movie.html" style="color:#ee0979">Movies</a></li>
+            <li><a href="About us.html">About</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <div class="main" id="main">
+
+        <i class="fa-solid fa-rocket cs-icon"></i>
+
+        <h1 class="cs-title">Coming Soon</h1>
+        <p class="cs-subtitle">Stay Tuned</p>
+
+        <div class="cs-divider"></div>
+
+        <p class="cs-msg">
+            Yeh page abhi <span>under construction</span> hai! <i class="fa-solid fa-road-barrier"></i><br>
+            Hum kuch <span>epic</span> bana rahe hain tumhare liye —<br>
+            jaldi hi yahan se sabhi anime movies milenge!<br><br>
+            Tab tak <span>SigmaDev</span> enjoy karo! <i class="fa-solid fa-fire"></i>
+        </p>
+
+        <div class="cs-tags">
+            <span class="cs-tag"><i class="fa-solid fa-film"></i> HD Movies</span>
+            <span class="cs-tag"><i class="fa-solid fa-download"></i> Fast Download</span>
+            <span class="cs-tag"><i class="fa-solid fa-star"></i> Top Rated</span>
+            <span class="cs-tag"><i class="fa-solid fa-bolt"></i> New Releases</span>
+        </div>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo"><i class="fa-solid fa-biohazard"></i>AniFlow</div>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.8rem; margin:4px 0;">Designed & Developed by</p>
+        <div class="footer-credits">
+            <span class="credit-you"><i class="fa-solid fa-code"></i> Pawan Chouhan</span>
+            <span class="footer-x"><i class="fa-solid fa-handshake"></i></span>
+            <span class="credit-claude"><i class="fa-solid fa-brain"></i> Claude AI</span>
+        </div>
+        <p class="footer-copy">© 2025 SigmaDev Anime. All rights reserved.</p>
+        <p class="footer-copy">If any issue please contact us. meerachouhan065@gmail.com or by report it</p>
+    </footer>
+
+    <script>
+        // Floating particles
+        const main = document.getElementById('main');
+        for (let i = 0; i < 15; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 8 + 6) + 's';
+            p.style.animationDelay = (Math.random() * 5) + 's';
+            p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
+            p.style.opacity = Math.random() * 0.5 + 0.2;
+            main.appendChild(p);
+        }
+    </script>
+
+</body>
+
+</html>
