@@ -472,40 +472,154 @@
         }
 
         /* MOBILE */
-         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 3rem;
-                letter-spacing: 6px;
-            }
+       /* ================= ADVANCED RESPONSIVE ================= */
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+/* Tablet view */
+@media (max-width: 900px) {
 
-            .logo {
-                font-size: 16px;
-            }
+    .hero h1 {
+        font-size: 3.2rem;
+        letter-spacing: 6px;
+    }
 
-            .nav-links{
-                gap: 7px;
-               
-            }
+    .hero p {
+        font-size: 0.9rem;
+    }
 
-                .nav-links a {
-                    font-size: 13px;
-                }
+    .main {
+        padding: 40px 15px 60px;
+    }
 
-                .footer-logo {
-                    font-size: 1.3rem;
-                }
-        }
+    .projects-grid {
+        gap: 18px;
+    }
 
-        .i {
-            position: relative;
-            left: 30px;
+    .card-title {
+        font-size: 1.3rem;
+    }
 
-            list-style-position: inside;
-        }
+    .card-desc {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 50px 15px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    /* PROJECT GRID */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CARD */
+    .project-card {
+        border-radius: 15px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-desc {
+        font-size: 0.8rem;
+    }
+
+    /* BUTTON */
+    .card-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    /* STATUS BADGE */
+    .status-badge {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+
+    /* COMING SOON */
+    .coming-soon-card {
+        padding: 25px 15px;
+    }
+
+    .coming-soon-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .coming-soon-card p {
+        font-size: 0.75rem;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer-logo {
+        font-size: 1.2rem;
+    }
+
+    .footer-credits {
+        flex-direction: row;
+        gap: 8px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-desc {
+        font-size: 0.75rem;
+    }
+}
     </style>
 </head>
 
