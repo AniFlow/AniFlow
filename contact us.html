@@ -382,15 +382,137 @@
             margin-top: 8px;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
+       /* ================= RESPONSIVE FIX ================= */
 
-            .container {
-                padding: 20px 15px 80px;
-            }
-        }
+/* Tablet */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 3.5rem;
+        letter-spacing: 4px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .social-card {
+        padding: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 60px 15px 30px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    /* SOCIAL CARDS */
+    .social-card {
+        flex-direction: row;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .social-info h3 {
+        font-size: 1rem;
+    }
+
+    .social-info p {
+        font-size: 0.75rem;
+    }
+
+    /* INFO CARD */
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .info-card p {
+        font-size: 0.8rem;
+    }
+
+    /* FLOAT BUTTON */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer-logo {
+        font-size: 1.2rem;
+    }
+
+    .footer-credits {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .social-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .social-info p {
+        font-size: 0.7rem;
+    }
+}
+        
     </style>
 </head>
 
