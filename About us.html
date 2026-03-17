@@ -412,6 +412,84 @@
             font-size: 0.75rem;
             margin-top: 8px;
         }
+
+        /* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .hero h1 {
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about-card {
+        padding: 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 60px 15px 30px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+    }
+
+    .about-section {
+        padding: 10px 15px 40px;
+    }
+
+    .about-card {
+        padding: 20px;
+    }
+
+    .team-card {
+        min-width: 100%;
+    }
+
+    .feedback-form {
+        padding: 25px;
+    }
+
+    .feedback-section {
+        padding: 0 15px 60px;
+    }
+
+    .footer-credits {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
     </style>
 </head>
 
@@ -534,10 +612,22 @@
     <script>
         // Form submit success message
         const form = document.querySelector('.feedback-form');
-        form.addEventListener('submit', function (e) {
-            setTimeout(() => {
-                document.getElementById('successMsg').style.display = 'block';
-            }, 500);
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const data = new FormData(form);
+
+            await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            document.getElementById('successMsg').style.display = 'block';
+            form.reset();
         });
     </script>
 
